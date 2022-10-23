@@ -25,12 +25,29 @@ export class AuthService {
     return user;
   }
 
-  generateToken(user: any) {
-    console.log('user', user);
+  async generateToken(loginDto: any) {
+    const { email, password } = loginDto;
+    const user: any = await this.userService.getUserByEmail(email);
 
-    const payload = { name: user.username, sub: user._id };
-    return {
-      access_token: this.jwtService.sign(payload),
-    };
+    if (user && (await bcrypt.compare(password, user.password))) {
+      const payload = {
+        email: user.email,
+        sub: user._id,
+        role: user.role,
+      };
+      return {
+        access_token: this.jwtService.sign(payload),
+      };
+    }
+    return null;
+  }
+
+  async validateUser(email: string, pass: string): Promise<any> {
+    const user = await this.userService.getUserByEmail(email);
+    if (user && user.password === pass) {
+      const { password, ...result } = user;
+      return result;
+    }
+    return null;
   }
 }

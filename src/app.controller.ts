@@ -17,20 +17,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(@Request() req): any {
-    const user = {
-      name: 'danngo',
-      roles: ['standerd-user'],
-    };
-
-    const requiredRoles = 'admin';
-    // No Autjorized
-
-    // if (!user.roles.includes(requiredRoles)) {
-    //   throw new UnauthorizedException('User not admin');
-    // }
-
-    // Autjorized
+  getHello() {
     return this.appService.getHello();
   }
 }

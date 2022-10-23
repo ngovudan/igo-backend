@@ -12,22 +12,11 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 import { LocalAuthGuard } from './local-auth.guard';
 
 @ApiTags('Auth')
-@Controller('auth')
+@Controller('')
 export class AuthController {
   constructor(private authService: AuthService) {}
-
-  // @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Body() loginDto: any): Promise<any> {
-    console.log('loginDto', loginDto);
     return this.authService.generateToken(loginDto);
-  }
-
-  @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
-  @Get('user')
-  async user(@Request() req): Promise<any> {
-    return 'ok';
-    // return req.user;
   }
 }

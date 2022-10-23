@@ -7,9 +7,16 @@ import { jwtConfig } from 'config/jwt.config';
 import { UserModule } from 'src/user/user.module';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { User, UserSchema } from 'core/schemas/user.schema';
 
 @Module({
-  imports: [UserModule, PassportModule, JwtModule.registerAsync(jwtConfig)],
+  imports: [
+    UserModule,
+    PassportModule,
+    JwtModule.registerAsync(jwtConfig),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+  ],
   providers: [AuthService, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
   exports: [AuthService],
