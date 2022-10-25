@@ -11,8 +11,8 @@ import { AdminRolesGuard } from './auth/admin-role.guard';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
 @ApiBearerAuth()
-@UseGuards(JwtAuthGuard, AdminRolesGuard('Admin'))
-@Controller()
+// @UseGuards(JwtAuthGuard, AdminRolesGuard('Admin'))
+@Controller('')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 

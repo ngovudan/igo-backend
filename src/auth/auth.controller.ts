@@ -12,7 +12,7 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 import { UserService } from './../user/user.service';
 
 @ApiTags('Auth')
-@Controller('')
+@Controller('auth')
 export class AuthController {
   constructor(
     private authService: AuthService,

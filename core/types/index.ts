@@ -1,3 +1,25 @@
+export const PaymentMethod = {
+  VNPay: 'vnpay',
+  VietQR: 'vietqr',
+  Cod: 'cod',
+  Credit: 'credit',
+  MoMo: 'momo',
+} as const;
+export type PaymentMethod = typeof PaymentMethod[keyof typeof PaymentMethod];
+
+export const OrderStatus = {
+  AwaitingPayment: 'awaiting-payment',
+  AwaitingShipment: 'awaiting-shipment',
+  Completed: 'completed',
+  Cancelled: 'cancelled',
+} as const;
+
+export const PaymentStatus = {
+  Processing: 'processing',
+  Succeeded: 'succeeded',
+  Failed: 'failed',
+} as const;
+
 export const RedisKey = {
   // payment
   Bank: 'payment-methods:banks',
