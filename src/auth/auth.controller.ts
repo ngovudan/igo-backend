@@ -6,15 +6,25 @@ import {
   Request,
   UseGuards,
 } from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
-import { LocalAuthGuard } from './local-auth.guard';
+import { UserService } from './../user/user.service';
 
 @ApiTags('Auth')
 @Controller('')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+  ) {}
+
+  @Get()
+  @UseGuards(JwtAuthGuard)
+  async currentUser(@Request() req: any) {
+    return this.userService.getUserById(req.user.id);
+  }
+
   @Post('login')
   async login(@Body() loginDto: any): Promise<any> {
     return this.authService.generateToken(loginDto);
