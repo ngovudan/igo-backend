@@ -1,4 +1,5 @@
 import { ModuleMetadata, Provider, Type } from '@nestjs/common'
+import { type } from 'os'
 
 export const PaymentMethod = {
   VNPay: 'vnpay',
@@ -47,7 +48,15 @@ export interface CategoryType {
   children?: CategoryType[]
 }
 
+// 9Pay
 
+export type NinepayModuleOptions = {
+  clientId: string
+  clientSecret: string
+  environment: 'sandbox' | 'production'
+}
+
+// Paypal
 export type PaypalModuleOptions = {
   clientId: string
   clientSecret: string

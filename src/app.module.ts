@@ -14,6 +14,7 @@ import { EmailModule } from './email/email.module'
 import { EmailConfirmationModule } from './email-confirmation/email-confirmation.module'
 import configurations from './configurations'
 import { PaypalPaymentModule } from './paypal-payment/paypal.module'
+import { NinepayPaymentModule } from './ninepay-payment/ninepay-payment.module';
 
 const routes: Routes = [
   {
@@ -66,7 +67,8 @@ const routes: Routes = [
     ConfigsModule,
     CategoriesModule,
     EmailModule,
-    EmailConfirmationModule
+    EmailConfirmationModule,
+    NinepayPaymentModule,
   ],
 
   controllers: [AppController],
