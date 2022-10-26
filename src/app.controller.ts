@@ -3,12 +3,12 @@ import {
   Get,
   Request,
   UnauthorizedException,
-  UseGuards,
-} from '@nestjs/common';
-import { ApiBearerAuth } from '@nestjs/swagger';
-import { AppService } from './app.service';
-import { AdminRolesGuard } from './auth/admin-role.guard';
-import { JwtAuthGuard } from './auth/jwt-auth.guard';
+  UseGuards
+} from '@nestjs/common'
+import { ApiBearerAuth } from '@nestjs/swagger'
+import { AppService } from './app.service'
+import { AdminRolesGuard } from './auth/admin-role.guard'
+import { JwtAuthGuard } from './auth/jwt-auth.guard'
 
 @ApiBearerAuth()
 // @UseGuards(JwtAuthGuard, AdminRolesGuard('Admin'))
@@ -18,6 +18,6 @@ export class AppController {
 
   @Get()
   getHello() {
-    return this.appService.getHello();
+    return this.appService.getHello()
   }
 }
