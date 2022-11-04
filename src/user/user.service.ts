@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { User, UserDocument } from 'src/core/schemas/user.schema'
+import { User, UserDocument } from 'src/user/user.schema'
 import { Model } from 'mongoose'
-import { BaseListDto, BaseListResponse } from 'src/common/dtos'
 import { CreateAndUpdateUserDto } from './dtos'
 import * as bcrypt from 'bcrypt'
 const saltOrRounds = 10
@@ -11,7 +10,7 @@ const saltOrRounds = 10
 export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
-  async listUsers(options: BaseListDto): Promise<BaseListResponse<User>> {
+  async listUsers(options: any): Promise<any> {
     const { page = 1, limit = 16 } = options
 
     const [docs, total] = await Promise.all([
