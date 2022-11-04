@@ -4,7 +4,7 @@ import {
   PaypalModuleAsyncOptions,
   PaypalModuleOptions,
   PaypalModuleOptionsFactory
-} from 'core/types'
+} from 'src/core/types'
 
 import {
   PAYPAL_AUTHORIZATION_SERVICE_INSTANCE_TOKEN,

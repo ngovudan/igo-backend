@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { AxiosInstance } from 'axios'
-import { PaypalModuleOptions } from 'core/types'
+import { PaypalModuleOptions } from 'src/core/types'
 import { PaypalErrorsConstants } from 'src/errors/paypal-errors-constants'
 import {
   PAYPAL_AUTHORIZATION_SERVICE_INSTANCE_TOKEN,

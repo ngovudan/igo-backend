@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Config, ConfigDocument } from 'core/schemas/config.schema';
+import { Config, ConfigDocument } from 'src/core/schemas/config.schema';
 import { Model } from 'mongoose';
 import { CreateConfigDto } from './dtos';
 

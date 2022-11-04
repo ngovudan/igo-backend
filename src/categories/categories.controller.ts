@@ -10,7 +10,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
-import { Category } from 'core/schemas/category.schema';
+import { Category } from 'src/core/schemas/category.schema';
 import { AdminRolesGuard } from 'src/auth/admin-role.guard';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { BaseListResponse } from 'src/common/dtos';

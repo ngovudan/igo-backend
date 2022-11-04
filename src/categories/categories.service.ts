@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Category, CategoryDocument } from 'core/schemas/category.schema';
-import { CategoryType } from 'core/types';
+import { Category, CategoryDocument } from 'src/core/schemas/category.schema';
+import { CategoryType } from 'src/core/types';
 import { Model } from 'mongoose';
 import { BaseListResponse } from 'src/common/dtos';
 import { ListCategoryDto } from './dtos';

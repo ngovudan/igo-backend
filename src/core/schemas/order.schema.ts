@@ -1,6 +1,6 @@
 import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { OrderStatus } from 'core/types';
+import { OrderStatus } from 'src/core/types';
 
 const {
   SchemaTypes: { Mixed },

@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Query, Param, Put } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { User } from 'core/schemas/user.schema';
+import { User } from 'src/core/schemas/user.schema';
 import { BaseListDto } from 'src/common/dtos';
 import { ActionBulkUser, CreateAndUpdateUserDto } from './dtos';
 

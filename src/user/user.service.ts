@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { User, UserDocument } from 'core/schemas/user.schema'
+import { User, UserDocument } from 'src/core/schemas/user.schema'
 import { Model } from 'mongoose'
 import { BaseListDto, BaseListResponse } from 'src/common/dtos'
 import { CreateAndUpdateUserDto } from './dtos'
@@ -88,11 +88,11 @@ export class UserService {
   }
 
   async getUserByEmail(email: string): Promise<User | undefined> {
-    return this.userModel.findOne({ where: { email } })
+    return this.userModel.findOne({ email })
   }
 
   async getUserByName(username: any): Promise<any> {
-    return this.userModel.findOne({ where: { username } })
+    return this.userModel.findOne({ username })
   }
 
   async markEmailAsConfirmed(email: string) {

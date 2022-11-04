@@ -8,7 +8,7 @@ import {
 import { AxiosInstance } from 'axios'
 import { InitiateTokenResponseDto } from './dtos'
 import { PaypalErrorsConstants } from 'src/errors/paypal-errors-constants'
-import { PaypalModuleOptions } from 'core/types'
+import { PaypalModuleOptions } from 'src/core/types'
 
 @Injectable()
 export class PaypalAuthorizationService {

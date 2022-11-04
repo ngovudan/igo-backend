@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, SchemaTypes } from 'mongoose';
-import { RedisKey } from 'core/types';
+import { RedisKey } from 'src/core/types';
 
 export type ConfigDocument = Config & Document;
 

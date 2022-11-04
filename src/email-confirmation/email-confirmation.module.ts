@@ -4,7 +4,7 @@ import { EmailConfirmationController } from './email-confirmation.controller'
 import { JwtService } from '@nestjs/jwt'
 import { UserService } from 'src/user/user.service'
 import { MongooseModule } from '@nestjs/mongoose'
-import { User, UserSchema } from 'core/schemas/user.schema'
+import { User, UserSchema } from 'src/core/schemas/user.schema'
 
 @Module({
   controllers: [EmailConfirmationController],
